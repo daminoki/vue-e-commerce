@@ -6,6 +6,6 @@
   <ThePage />
 </template>
 
-<style scoped>
+<style>
 @import "./assets/styles/global.scss";
 </style>

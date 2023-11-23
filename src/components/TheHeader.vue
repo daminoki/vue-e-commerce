@@ -60,7 +60,6 @@
 </template>
 
 <style scoped lang="scss">
-@import '../assets/styles/global.scss';
 @import '../assets/styles/mixins.scss';
 
 .header-container {
@@ -78,13 +77,19 @@
   position: relative;
 
   input {
+    @include txt-14;
     padding: 19px 16px 19px 48px;
     background-color: var(--light-grey);
     border-radius: 8px;
     width: 100%;
 
     &::placeholder {
+      @include txt-14;
       color: var(--dark-grey);
+    }
+
+    &::-webkit-search-cancel-button {
+      display: none;
     }
   }
 
@@ -100,6 +105,23 @@
 .header-nav {
   display: flex;
   gap: 52px;
+}
+
+.nav-link {
+  @include header-link;
+
+  color: var(--typo-dark);
+  opacity: .3;
+
+  transition: opacity .2s ease-in-out;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .header-user-panel {
